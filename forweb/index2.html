@@ -76,13 +76,15 @@
 
             <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
 
-            <a-asset-item id="cloud-obj" src="models/cloud2/cloud.obj"></a-asset-item>
-            <a-asset-item id="cloud-mtl" src="models/cloud2/cloud.mtl"></a-asset-item>
+            <a-asset-item id="robot" src="models/Island/island.gltf"></a-asset-item>
 
         </a-assets>
 
         <!-- create your content here. just a box for now -->
-        <a-obj-model scale=".001 .001 .001" position="0 1 0.1" src="#cloud-obj" mtl="#cloud-mtl"></a-obj-model>
+        <a-gltf-model position="0 0 0" src="#robot" animation-mixer>
+            <!-- place sound inside model for spatial sound -->
+
+        </a-gltf-model>
 
 
         <!-- create your content here. just a box for now -->
