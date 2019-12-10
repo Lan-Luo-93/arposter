@@ -76,13 +76,19 @@
 
             <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
 
-            <a-asset-item id="cloud-obj" src="models/cloud2/cloud.obj"></a-asset-item>
-            <a-asset-item id="cloud-mtl" src="models/cloud2/cloud.mtl"></a-asset-item>
-
+            <a-asset-item id="robot" src="models/Island/island.gltf">
+        
         </a-assets>
 
         <!-- create your content here. just a box for now -->
-        <a-obj-model scale=".001 .001 .001" position="0 1 0.1" src="#cloud-obj" mtl="#cloud-mtl"></a-obj-model>
+        
+
+
+        <a-gltf-model position="0 0 0" src="#robot" animation-mixer>
+            <!-- place sound inside model for spatial sound -->
+
+        </a-gltf-model>
+       
 
 
         <!-- create your content here. just a box for now -->
@@ -92,6 +98,7 @@
             <a-text id="accely" position='-0.786 0.573 0.140' rotation='-90 0 0' color='white' value="Air Quality"></a-text>
             <a-text id="accelz" position='-0.786 0.573 0.340' rotation='-90 0 0' color='white' value="Healthy"></a-text>
         </a-entity>
+
          <!-- <a-entity id='tstats' position='0 -0.435 -0.381'>
             <a-box position='-0.187 0.435 0.981' rotation="-90 0 0" scale='1.210 0.800 -0.070' material='opacity: 0.75;'></a-box>
             <a-text id="temp" position='-0.786 0.573 0.966' rotation='-90 0 0' color='#3000ff' value="Hello, World!"></a-text>
