@@ -74,20 +74,19 @@
     </a-assets>
 
 
-      <a-entity position="-1.5 1 -2" rotation="-90 0 0" scale="1 1 1" text-geometry="value: Unhealthy; font: #optimerBoldFont"></a-entity>
+      <a-entity position="-1.5 1 -2" rotation="-90 0 0" scale="1 1 1" text-geometry="value: Healthy; font: #optimerBoldFont"></a-entity>
 
             <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
 
-            <a-asset-item id="scene" src="models/Island/scene.gltf"></a-asset-item>
-            
+            <a-asset-item id="robot" src="models/Stand_out/Stand.gltf"></a-asset-item>
 
         </a-assets>
 
         <!-- create your content here. just a box for now -->
-        <a-gltf-model scale=".01 .01 .01" position="0 1 0.1" src="#scene" animation-mixer ></a-gltf-mode>
+        <a-gltf-model position="0 0 0" src="#robot" animation-mixer>
             <!-- place sound inside model for spatial sound -->
 
-       
+        </a-gltf-model>
 
 
         <!-- create your content here. just a box for now -->
