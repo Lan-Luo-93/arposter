@@ -2,14 +2,12 @@
 <html>
 
 <head>
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@333873f3279c8d49881577662e16e51baa480ea3/dist/aframe-master.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
     <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.min.js"></script>
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
 
 
     <style>
@@ -74,25 +72,22 @@
     </a-assets>
 
 
-      <a-entity position="-1.5 1 -2" rotation="-90 0 0" scale="1 1 1" text-geometry="value: Healthy; font: #optimerBoldFont"></a-entity>
+      <a-entity position="-1.5 1 -2" rotation="-90 0 0" scale="1 1 1" text-geometry="value: Unhealthy; font: #optimerBoldFont"></a-entity>
 
             <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
 
-            
-            <a-asset-item id="robot" src="models/Stand_out/Stand.gltf"></a-asset-item>
-        
+            <a-asset-item id="cloud-obj" src="models/cloud2/cloud.obj"></a-asset-item>
+            <a-asset-item id="cloud-mtl" src="models/cloud2/cloud.mtl"></a-asset-item>
+
+        </a-assets>
 
         <!-- create your content here. just a box for now -->
-        <!-- add animation-mixer inside GLTF model for animation -->
-        <a-gltf-model position="0 0 0" src="#robot" animation-mixer>
-            <!-- place sound inside model for spatial sound -->
-
-        </a-gltf-model>
+        <a-obj-model scale=".001 .001 .001" position="0 1 0.1" src="#cloud-obj" mtl="#cloud-mtl"></a-obj-model>
 
 
         <!-- create your content here. just a box for now -->
         <a-entity id='astats' position='0 -0.435 -0.381'>
-            <a-box position='-0.186 0.487 0' rotation="-90 0 0" color='#fdc453' scale='3.210 3.210 -0.070' material='opacity: 0.75;'></a-box>
+            <a-box position='-0.186 0.487 0' rotation="-90 0 0" color='#fdc453' scale='3.210 4.800 -0.070' material='opacity: 0.75;'></a-box>
             <a-text id="accelx" position='-0.786 0.573 1' rotation='-90 0 0' color='white' value="Hello, World!"></a-text>
             <a-text id="accely" position='-0.786 0.573 0.140' rotation='-90 0 0' color='white' value="Air Quality"></a-text>
             <a-text id="accelz" position='-0.786 0.573 0.340' rotation='-90 0 0' color='white' value="Healthy"></a-text>
