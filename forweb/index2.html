@@ -56,7 +56,7 @@
     message: function(event) {
       let pElement = document.createElement('p');
       console.log(JSON.stringify(event.message.text));
-      $('#accelx').attr("value", 'x: ' + event.message.text);
+      $('#accelx').attr("value", 'CO2 + TVOC: ' + event.message.text);
     },
     presence: function(event) {
 
