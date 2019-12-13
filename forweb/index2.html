@@ -72,9 +72,14 @@
     </a-assets>
 
 
-      <a-entity position="-1.5 1 -2" rotation="-90 0 0" color='#00a6c0' scale="1 1 1" text-geometry="value: Healthy; font: #helvetiker"></a-entity>
+<!--       <a-entity position="-1.5 1 -2" rotation="-90 0 0" color='#00a6c0' scale="1 1 1" text-geometry="value: Healthy; font: #helvetiker"></a-entity> -->
 
-            <a-asset-item id="helvetiker" src="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/fonts/helvetiker_bold.typeface.json"></a-asset-item>
+      <a-entity 
+      position="-1.5 1 -2" 
+      rotation="-90 0 0" 
+      text-geometry="value: Healthy; font: #helvetiker;" 
+      material="color: red">
+      </a-entity>
 
             <a-asset-item id="Island2-obj" src="models/Island2/Island2.obj"></a-asset-item>
             <a-asset-item id="Island2-mtl" src="models/Island2/Island2.mtl"></a-asset-item>
