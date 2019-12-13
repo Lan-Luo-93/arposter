@@ -87,8 +87,10 @@
         </a-assets>
 
         <!-- create your content here. just a box for now -->
-        <a-obj-model scale="0.8 0.8 0.8" position="0 1 -1" rotation="-90 0 0" src="#Island2-obj" mtl="#Island2-mtl">
-            <a-animation easing="linear" attribute="rotation" dur="10000" to="0 0 360" repeat="indefinite"></a-animation>
+        <a-obj-model scale="0.8 0.8 0.8" position="0 1 -1" rotation="-90 0 0" src="#Island2-obj" mtl="#Island2-mtl"
+         animation__rotation="property: rotation; dir: alternate; dur: 20000;
+                           easing: easeInSine; loop: true; to: -90 0 360">
+
         </a-obj-model>
 
 
