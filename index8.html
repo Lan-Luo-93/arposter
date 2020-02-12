@@ -12,8 +12,11 @@
   <body>
     <a-scene>
       <a-sky src="img/norway.JPG" rotation="0 -130 0"></a-sky>
+      <a-entity
+        particle-system="preset: snow; particleCount: 10000;"
+        position="0 1.25 -5"></a-entity>
 
-      <a-text font="dejavu" value="Tromso, Norway" width="6" position="-2.5 0.25 -1.5"
+      <a-text font="monoid" value="Tromso, Norway" width="8" position="-2.5 0.25 -1.5"
               rotation="0 15 0"></a-text>
     </a-scene>
   </body>
