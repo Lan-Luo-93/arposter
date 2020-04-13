@@ -79,15 +79,15 @@
   const setGraphic = (co2Value, tvocValue) => {
     if (co2Value > 1000 || tvocValue > 300){
       healthyText = 'Unhealthy';
-      //$('#aniObj').attr("src", "#healthyGoo");
+      $('#aniObj').attr("src", "#healthyGoo");
     }
     else{
       healthyText = 'Healthy';
-      //$('#aniObj').attr("src", "#unhealthyGoo");
+      $('#aniObj').attr("src", "#unhealthyGoo");
     }
     console.log(healthyText);
     $('#healthyID').attr("text-geometry", `value: ${healthyText}; font: #helvetiker; size: 0.3;`);
-    console.log('8');
+    console.log('9');
   };
 
 </script>
@@ -108,10 +108,10 @@
         material="color: white;">
       </a-entity>
  
-            <!--<a-asset-item id="Island2-obj" src="models/Island2/Island2.obj"></a-asset-item>
+            <a-asset-item id="Island2-obj" src="models/Island2/Island2.obj"></a-asset-item>
             <a-asset-item id="Island2-mtl" src="models/Island2/Island2.mtl"></a-asset-item>
-            <a-sphere id="healthyGoo" shader-frog=src:url(shaders/healthy.json)></a-sphere> -->
-            <a-sphere id="unhealthyGoo" shader-frog=src:url(shaders/unhealthy.json)></a-sphere> 
+            <a-sphere id="healthyGoo" shader-frog=src:url(shaders/healthy.json)></a-sphere> 
+            <a-sphere id="unhealthyGoo" shader-frog=src:url(shaders/unhealthy.json)></a-sphere>
 
         </a-assets>
         <!-- <a-sphere material-displacement
@@ -125,7 +125,7 @@
       <a-box color="#CCC" width="3" depth="3" height="0.1" position="0 0 -2"></a-box> -->
 
         <!-- create your content here. just a box for now -->
-        <a-obj-model id="aniObj" scale="0.05 0.05 0.05" position="0 1 0" rotation="-90 0 0" src="#unhealthyGoo" 
+        <a-obj-model id="aniObj" scale="0.05 0.05 0.05" position="0 1 0" rotation="-90 0 0" src="#Island2-obj" 
          animation__rotation="property: rotation; dir: alternate; dur: 20000;
                            easing: easeInSine; loop: true; to: -70 0 0">
 
