@@ -64,8 +64,8 @@
       let co2temp = msg[0].split(' ');
       let co2Value = co2temp[1];
       console.log('Hello the co2 value is: ', co2Value);
-      tvocTemp = parseToInt(msg[1].split(' '));
-      tvocValue = parseToInt(tvocTemp[1]);
+      tvocTemp = parseInt(msg[1].split(' '));
+      tvocValue = parseInt(tvocTemp[1]);
       setGraphic(co2Value, tvocValue);
       console.log('nihao the tvoc value is', tvocValue);
       console.log(JSON.stringify(event.message.text));
@@ -84,6 +84,7 @@
     else{
       healthyText = 'Healthy';
     }
+    console.log(healthyText);
   };
 
 </script>
