@@ -79,15 +79,15 @@
   const setGraphic = (co2Value, tvocValue) => {
     if (co2Value > 1000 || tvocValue > 300){
       healthyText = 'Unhealthy';
-      $('#aniObj').attr("src", "#healthyGoo");
+      //$('#aniObj').attr("src", "#healthyGoo");
     }
     else{
       healthyText = 'Healthy';
-      $('#aniObj').attr("src", "#unhealthyGoo");
+      //$('#aniObj').attr("src", "#unhealthyGoo");
     }
     console.log(healthyText);
     $('#healthyID').attr("text-geometry", `value: ${healthyText}; font: #helvetiker; size: 0.3;`);
-    console.log('7');
+    console.log('8');
   };
 
 </script>
