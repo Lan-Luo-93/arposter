@@ -61,6 +61,9 @@
       let co2temp = msg[0].split(' ');
       let co2Value = co2temp[1];
       console.log(co2Value);
+      let tvocTemp = msg[1].split(' ');
+      let tvocValue = tvocTemp[1];
+      console.log(tvocValue);
       console.log(JSON.stringify(event.message.text));
       $('#accelx').attr("value", msg[0]);
       $('#accely').attr("value", msg[1]);
