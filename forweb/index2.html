@@ -8,8 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!--     <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script> -->
     <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.min.js"></script>
-    <!-- <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="./js/index.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/msj121/aframeFrogShaders/master/aframe-shader-frog.js"></script>
+    <script src="js/aframe-environment-component.js"></script>
 
 
     <style>
@@ -107,7 +108,7 @@
  
             <!--<a-asset-item id="Island2-obj" src="models/Island2/Island2.obj"></a-asset-item>
             <a-asset-item id="Island2-mtl" src="models/Island2/Island2.mtl"></a-asset-item>-->
-            <a-sphere id="Island2-obj" radius="5" scale=".5 .5 .5" shader-frog=src:url(shaders/healthy.json)></a-sphere> 
+            <a-sphere id="Island2-obj" radius="5" shader-frog=src:url(shaders/healthy.json)></a-sphere> 
 
         </a-assets>
         <!-- <a-sphere material-displacement
