@@ -58,9 +58,6 @@
     message: function(event) {
       let pElement = document.createElement('p');
       let msg = event.message.text.split(',');
-      let co2temp = msg[0].split(' ');
-      let co2Value = co2temp[1];
-      console.log(co2Value);
       console.log(JSON.stringify(event.message.text));
       $('#accelx').attr("value", msg[0]);
       $('#accely').attr("value", msg[1]);
