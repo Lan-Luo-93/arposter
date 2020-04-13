@@ -83,7 +83,7 @@
       healthyText = 'Healthy';
     }
     console.log(healthyText);
-    console.log('4');
+    console.log('5');
   };
 
 </script>
@@ -97,11 +97,10 @@
 <!-- <a-entity position="-1.5 1 -2" rotation="-90 0 0" color='#00a6c0' scale="1 1 1" text-geometry="value: Healthy; font: #helvetiker"></a-entity> -->
 
       <a-entity 
-      position="-1.5 0.5 -1.3" 
-      rotation="-90 0 0" 
-      value="healthyText"
-      font="#helvetiker"
-      material="color: white;">
+        position="-1.5 0.5 -1.3" 
+        rotation="-90 0 0" 
+        material="color: white;">
+        <a-text font="#helvetiker" value=healthyText></a-text>
       </a-entity>
  
             <a-asset-item id="Island2-obj" src="models/Island2/Island2.obj"></a-asset-item>
