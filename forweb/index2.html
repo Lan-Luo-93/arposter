@@ -55,17 +55,14 @@
     withPresence: true
   });
 
-  let co2Value;
-  let tvocValue;
-  let healthyText;
   pubnub.addListener({
     message: function(event) {
       let pElement = document.createElement('p');
       let msg = event.message.text.split(',');
       let co2temp = msg[0].split(' ');
       let co2Value = parseInt(co2temp[1]);
-      tvocTemp = msg[1].split(' ');
-      tvocValue = parseInt(tvocTemp[1]);
+      let tvocTemp = msg[1].split(' ');
+      let tvocValue = parseInt(tvocTemp[1]);
       setGraphic(co2Value, tvocValue);
       console.log(JSON.stringify(event.message.text));
       $('#accelx').attr("value", msg[0]);
@@ -77,17 +74,26 @@
   });
 
   const setGraphic = (co2Value, tvocValue) => {
-    if (co2Value > 1000 || tvocValue > 300){
-      healthyText = 'Unhealthy';
-      $('#aniObj').attr("src", "#healthyGoo");
+    let healthyText;
+    if ( (co2Value > 700) || (tvocValue > 250)){
+      if (co2Value > 1000 || tvocValue > 2000){
+        healthyText = 'Unhealthy';
+        $('#goo').attr("shader-frog", "src:url(shaders/unhealthy.json)");
+        $('#posterBox').attr("color", "#fc9f66");
+    }
+      else{
+        healthyText = 'Moderate';
+        $('#goo').attr("shader-frog", "src:url(shaders/moderate.json)");
+        $('#posterBox').attr("color", "#fae39c");
+      }
     }
     else{
       healthyText = 'Healthy';
-      $('#aniObj').attr("src", "#unhealthyGoo");
+      $('#goo').attr("shader-frog", "src:url(shaders/healthy.json)");
+      $('#posterBox').attr("color", "#b8e0e3");
     }
     console.log(healthyText);
     $('#healthyID').attr("text-geometry", `value: ${healthyText}; font: #helvetiker; size: 0.3;`);
-    console.log('1');
   };
 
 </script>
@@ -99,19 +105,19 @@
 
 
 <!-- <a-entity position="-1.5 1 -2" rotation="-90 0 0" color='#00a6c0' scale="1 1 1" text-geometry="value: Healthy; font: #helvetiker"></a-entity> -->
-
+<!--position="-1.5 0.5 -1.3"-->
       <a-entity 
         id="healthyID"
-        position="-1.5 0.5 -1.3" 
+        position="-0.75 0 -0.85"
         rotation="-90 0 0" 
         text-geometry="value: Healthy; font: #helvetiker;"
-        material="color: white;">
+        material="color: white;"
+        scale="0.5 0.5 0.5">
       </a-entity>
  
             <a-asset-item id="Island2-obj" src="models/Island2/Island2.obj"></a-asset-item>
             <a-asset-item id="Island2-mtl" src="models/Island2/Island2.mtl"></a-asset-item>
-            <a-sphere id="healthyGoo" shader-frog=src:url(shaders/healthy.json)></a-sphere> 
-            <a-sphere id="unhealthyGoo" shader-frog=src:url(shaders/unhealthy.json)></a-sphere>
+            <a-sphere id="goo" scale="0.4 0.4 0.4"></a-sphere> 
 
         </a-assets>
         <!-- <a-sphere material-displacement
@@ -125,7 +131,7 @@
       <a-box color="#CCC" width="3" depth="3" height="0.1" position="0 0 -2"></a-box> -->
 
         <!-- create your content here. just a box for now -->
-        <a-obj-model id="aniObj" scale="0.05 0.05 0.05" position="0 1 0" rotation="-90 0 0"  
+        <a-obj-model scale="0.1 0.1 0.1" position="0 1 0" rotation="-90 0 0"  src="#goo"
          animation__rotation="property: rotation; dir: alternate; dur: 20000;
                            easing: easeInSine; loop: true; to: -70 0 0">
 
@@ -133,8 +139,8 @@
 
 
         <!-- create your content here. just a box for now -->
-        <a-entity id='astats' position='0 -0.435 -0.381'>
-            <a-box position='0 0 0' rotation="90 0 0" color='#99dedf' scale='4 4 -0.070' material='opacity: 0.75;'></a-box>
+        <a-entity id='astats' position='0 -0.435 -0.381' scale='.5 .5 .5'>
+            <a-box id="posterBox" position='0 0 0' rotation="90 0 0" color='#99dedf' scale='4 4 -0.070' material='opacity: 0.75;'></a-box>
             <a-text id="accelx" position='-1.5 1 -0.7' rotation='-90 0 0' color='white' value="Hello, World!"></a-text>
             <a-text id="accely" position='-1.5 1 -0.4' rotation='-90 0 0' color='white' value="Air Quality"></a-text>
             <a-text id="accelz" position='-1.5 1 -1.4' rotation='-90 0 0' color='white' value="Air Quality"></a-text>
@@ -146,7 +152,7 @@
         </a-entity>  -->
 
         <!-- define a camera which will move according to the marker position -->
-        <a-marker-camera type='pattern' url='marker/pattern-marker.patt'></a-marker-camera>
+        <a-marker-camera type='pattern' url='marker/pattern-AiR2copy.patt'></a-marker-camera>
     </a-scene>
 </body>
 
